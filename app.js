@@ -4,10 +4,11 @@ require('dotenv/config');
 
 const app = express();
 
-//Middlewares
-app.use('/posts', () => {
-    console.log("This is a middleware running!");
-});
+//import routes
+const postsRoute = require('./routes/posts.js');
+
+//middleware
+app.use('/posts', postsRoute);
 
 
 //Routes
